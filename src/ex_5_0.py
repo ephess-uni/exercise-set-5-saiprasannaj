@@ -4,7 +4,7 @@ def line_count(infile):
     print(len(line))
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
   
     try:
         from src.util import get_repository_root
@@ -14,3 +14,4 @@ if _name_ == "_main_":
    
     data_directory = get_repository_root() / "data"
     line_count(data_directory / "ex_5_2-data.csv")
+   
