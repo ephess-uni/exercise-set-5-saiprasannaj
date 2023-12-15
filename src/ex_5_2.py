@@ -16,11 +16,15 @@ except ImportError:
 
 if __name__ == "__main__":
 
-    # Use these predefined input / output files
+
     root_dir = get_repository_root()
     INFILE = root_dir / "data" / "ex_5_2-data.csv"
     OUTFILE = root_dir / "outputs" / "ex_5_2-processed.csv"
 
-    # Complete the data processing steps using numpy here.
-
-    # Save the output to OUTFILE using numpy routines.
+  
+    data = np.loadtxt(INFILE, delimiter=',')
+    data -= np.mean(data)
+    data /= np.std(data)
+    processed = data
+   
+    np.savetxt(OUTFILE, processed, delimiter=',')
